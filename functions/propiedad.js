@@ -362,7 +362,7 @@ export async function onRequest(context) {
                 <h2>Menú rápido</h2>
                 <ul>
                     <li><a href="index">Propiedades</a></li>
-                    <li><a href="index?nosotros">Nosotros</a></li>
+                    <li><a href="index#nosotros">Nosotros</a></li>
                     <li><a href="#arriba" onclick="event.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'});">Ir al inicio</a></li>
 				</ul>
             </article>
