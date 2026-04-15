@@ -186,23 +186,23 @@ export async function onRequest(context) {
                     </div>
 
                    			${(
-    (getDato("HABITACIONES") && getDato("HABITACIONES").trim() !== "" && getDato("HABITACIONES") !== "0") || 
-    (getDato("BAÑOS") && getDato("BAÑOS").trim() !== "" && getDato("BAÑOS") !== "0") || 
+    (getDato("ZONIFICACION") && getDato("ZONIFICACION").trim() !== "" && getDato("ZONIFICACION") !== "0") || 
+    (getDato("SERVICIOS") && getDato("SERVICIOS").trim() !== "" && getDato("SERVICIOS") !== "0") || 
     (getDato("ÁREA CONSTRUIDA") && getDato("ÁREA CONSTRUIDA").trim() !== "" && getDato("ÁREA CONSTRUIDA") !== "0") || 
-    (getDato("ESTACIONAMIENTO") && getDato("ESTACIONAMIENTO").trim() !== "" && getDato("ESTACIONAMIENTO") !== "0")
+    (getDato("ESTADO LEGAL") && getDato("ESTADO LEGAL").trim() !== "" && getDato("ESTADO LEGAL") !== "0")
 ) ? `
     <div class="grupo-bloque-fx grupo-detalle">
         <span class="detalle-fx">
-            ${getDato("HABITACIONES") && getDato("HABITACIONES").trim() !== "" && getDato("HABITACIONES") !== "0" ? `
-                <span class="dormitorios">
+            ${getDato("ZONIFICACION") && getDato("ZONIFICACION").trim() !== "" && getDato("ZONIFICACION") !== "0" ? `
+                <span class="zonificaión">
                     <i class="houzez-icon icon-hotel-double-bed-1 me-2"></i> 
-                    ${getDato("HABITACIONES")} <span class="bloque-texto-fx">Habitaciones</span>
+                    ${getDato("ZONIFICACION")} <span class="bloque-texto-fx">Habitaciones</span>
                 </span>` : ''}
 
-            ${getDato("BAÑOS") && getDato("BAÑOS").trim() !== "" && getDato("BAÑOS") !== "0" ? `
-                <span class="banos">
+            ${getDato("SERVICIOS") && getDato("SERVICIOS").trim() !== "" && getDato("SERVICIOS") !== "0" ? `
+                <span class="servicios">
                     <i class="houzez-icon icon-bathroom-shower-1 me-2"></i> 
-                    ${getDato("BAÑOS")} <span class="bloque-texto-fx">Baños</span>
+                    ${getDato("SERVICIOS")} <span class="bloque-texto-fx">servicios</span>
                 </span>` : ''}
 
             ${getDato("ÁREA CONSTRUIDA") && getDato("ÁREA CONSTRUIDA").trim() !== "" && getDato("ÁREA CONSTRUIDA") !== "0" ? `
@@ -211,10 +211,10 @@ export async function onRequest(context) {
                     ${getDato("ÁREA CONSTRUIDA")} m² <span class="bloque-texto-fx">Área</span>
                 </span>` : ''}
 
-            ${getDato("ESTACIONAMIENTO") && getDato("ESTACIONAMIENTO").trim() !== "" && getDato("ESTACIONAMIENTO") !== "0" ? `
-                <span class="estacionamientos">
+            ${getDato("") && getDato("ESTADO LEGAL").trim() !== "" && getDato("ESTADO LEGAL") !== "0" ? `
+                <span class="estado legal">
                     <i class="houzez-icon icon-car-1 me-2"></i> 
-                    ${getDato("ESTACIONAMIENTO")} <span class="bloque-texto-fx">Estacionamientos</span>
+                    ${getDato("ESTADO LEGAL")} <span class="bloque-texto-fx">Estado legal</span>
                 </span>` : ''}
         </span>
     </div>
@@ -247,10 +247,10 @@ export async function onRequest(context) {
             					<span>Precio:</span> 
             					<span>${getDato("MONEDA")} ${Number(getDato("PRECIO")).toLocaleString('es-CO')}</span>
         					</div>` : ''}    
-    						${getDato("HABITACIONES") && getDato("HABITACIONES") !== "0" ? `<div class="item-detalle-fx"><span>Habitaciones:</span> <span>${getDato("HABITACIONES")}</span></div>` : ''}    
-    						${getDato("BAÑOS") && getDato("BAÑOS") !== "0" ? `<div class="item-detalle-fx"><span>Baños:</span> <span>${getDato("BAÑOS")}</span></div>` : ''}    
-    						${getDato("ESTACIONAMIENTO") && getDato("ESTACIONAMIENTO") !== "0" ? `<div class="item-detalle-fx"><span>Estacionamientos:</span> <span>${getDato("ESTACIONAMIENTO")}</span></div>` : ''}    
-    						${getDato("ÁREA CONSTRUIDA") && getDato("ÁREA CONSTRUIDA") !== "0" ? `<div class="item-detalle-fx"><span>Área construida:</span> <span>${getDato("ÁREA CONSTRUIDA")} m²</span></div>` : ''}    
+    						${getDato("ZONIFICACION") && getDato("ZONIFICACION") !== "0" ? `<div class="item-detalle-fx"><span>Zoficacion:</span> <span>${getDato("ZONIFICACION")}</span></div>` : ''}    
+    						${getDato("SERVICIOS") && getDato("SERVICIOS") !== "0" ? `<div class="item-detalle-fx"><span>Servicios:</span> <span>${getDato("SERVICIOS")}</span></div>` : ''}    
+    						${getDato("ESTADO LEGAL") && getDato("ESTADO LEGAL") !== "0" ? `<div class="item-detalle-fx"><span>Estado legal:</span> <span>${getDato("ESTADO LEGAL")}</span></div>` : ''}    
+    						${getDato("TOPOGRAFIA") && getDato("TOPOGRAFIA") !== "0" ? `<div class="item-detalle-fx"><span>Topografia:</span> <span>${getDato("TOPOGRAFIA")} m²</span></div>` : ''}    
     						${getDato("ÁREA DEL LOTE") && getDato("ÁREA DEL LOTE") !== "0" ? `<div class="item-detalle-fx"><span>Área del lote:</span> <span>${getDato("ÁREA DEL LOTE")} m²</span></div>` : ''}    
     						${getDato("PÁIS") ? `<div class="item-detalle-fx"><span>País:</span> <span>${getDato("PÁIS")}</span></div>` : ''}    
     						${getDato("CIUDAD/UBICACIÓN") ? `<div class="item-detalle-fx"><span>Ciudad:</span> <span>${getDato("CIUDAD/UBICACIÓN")}</span></div>` : ''}    
