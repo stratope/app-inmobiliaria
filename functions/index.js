@@ -64,10 +64,10 @@ export async function onRequest(context) {
             operacion: cabecera.indexOf("OPERACIÓN"),
             precio: cabecera.indexOf("PRECIO"),
             moneda: cabecera.indexOf("MONEDA"),
-            habs: cabecera.indexOf("HABITACIONES"),
-            banos: cabecera.indexOf("BAÑOS"),
-            parking: cabecera.indexOf("ESTACIONAMIENTO"),
-            area: cabecera.indexOf("ÁREA CONSTRUIDA"),
+            habs: cabecera.indexOf("ZONIFICACION"),
+            banos: cabecera.indexOf("SERVICIOS"),
+            parking: cabecera.indexOf("ESTADO LEGAL"),
+            area: cabecera.indexOf("TOPOGRAFIA"),
             zona: cabecera.indexOf("ZONA"),
             dir: cabecera.indexOf("DIRECCIÓN"),
             foto: cabecera.indexOf("FOTO URL 1"),
@@ -89,9 +89,9 @@ export async function onRequest(context) {
                 operacion: limpiar(dato[idx.operacion]),
                 precio: limpiar(dato[idx.precio]) || "0",
                 moneda: limpiar(dato[idx.moneda]) || "$",
-                habs: limpiar(dato[idx.habs]) || "0",
-                banos: limpiar(dato[idx.banos]) || "0",
-                parking: limpiar(dato[idx.parking]) || "0",
+                zonificacion: limpiar(dato[idx.zonificacion]) || "0",
+                servicos: limpiar(dato[idx.servicios]) || "0",
+                estado legal: limpiar(dato[idx.estado legal]) || "0",
                 area: limpiar(dato[idx.area]) || "0",
                 zona: limpiar(dato[idx.zona]),
                 dir: limpiar(dato[idx.dir]),
@@ -108,10 +108,10 @@ export async function onRequest(context) {
                     <h2>${p.titulo || (p.operacion + ' en ' + p.zona)}</h2>
                     <span class="direccion"><i class="houzez-icon icon-pin me-2"></i> ${p.dir} - ${p.zona}</span>
                     <span class="detalle">
-                        ${p.habs !== "0" ? `<span class="dormitorios"><i class="houzez-icon icon-hotel-double-bed-1"></i> ${p.habs}</span>` : ''}
-                        ${p.banos !== "0" ? `<span class="banos"><i class="houzez-icon icon-bathroom-shower-1"></i> ${p.banos}</span>` : ''}
-                        ${p.area !== "0" ? `<span class="area"><i class="houzez-icon icon-ruler-triangle"></i> ${p.area} m²</span>` : ''}
-						${p.parking && p.parking !== "0" ? `<span class="garaje"><i class="houzez-icon icon-car-1 me-2"></i> ${p.parking}</span>` : ''}
+                        ${p.zonificacion !== "0" ? `<span class="zonificacion"><i class="houzez-icon icon-hotel-double-bed-1"></i> ${p.zonificacion}</span>` : ''}
+                        ${p.servicios !== "0" ? `<span class="servicios"><i class="houzez-icon icon-agua-luz-1"></i> ${p.servicios}</span>` : ''}
+                        ${p.topografia !== "0" ? `<span class="topogarfia"><i class="houzez-icon icon-ruler-triangle"></i> ${p.area} m²</span>` : ''}
+						${p.area legal && p.area legal !== "0" ? `<span class="area legal"><i class="houzez-icon icon-car-1 me-2"></i> ${p.area legal}</span>` : ''}
                     </span>
                     <span class="precio">${p.moneda} ${Number(p.precio).toLocaleString('es-CO')}</span>
                 </article>`;
